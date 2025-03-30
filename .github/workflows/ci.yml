@@ -22,7 +22,10 @@ jobs:
 
     - name: Install Markdown linting dependencies
       run: |
-        npm install -g markdownlint-cli markdownlint-rule-quick-link
+
+        # npm install -g markdownlint-cli markdownlint-rule-quick-link
+        npm install -g markdownlint-cli
+
 
     - name: Run markdown lint
       run: |
