@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'  
+    branches:
+      - main
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js 18
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'  
+
+    - name: Install Markdown linting dependencies
+      run: |
+
+        # npm install -g markdownlint-cli markdownlint-rule-quick-link
+        npm install -g markdownlint-cli
+
+
+    - name: Run markdown lint
+      run: |
+        markdownlint '**/*.md' --fix
+        markdownlint --version
+
+  spellcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install spell check dependencies
+      run: |
+        npm install -g cspell
+        cspell --version
+
+    - name: Run spell check
+      run: |
+        cspell '**/*.md'
