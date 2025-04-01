@@ -14,3 +14,15 @@
 1. There can be a case that instead of redirecting to the specified page, it just navigates to the home page.
 2. Platform-specific issues can arise.
 3. There can be times when the pages are removed. In such cases, deep links can lead to users' confusion.
+
+## Deep Linking
+
+const linking = {
+  prefixes: ["myreactapp://"],
+  config: {
+    screens: {
+      Home: "home",
+      Details: "details/", 
+    },
+  },
+};

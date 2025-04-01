@@ -11,3 +11,26 @@ These transitions can also be customized.
 1. First, set the linking configuration containing the URL of the React app and the different screen URLs.
 2. Then pass linking as a prop to the 'NavigationContainer' containing the screens.
 3. Go to Chrome, pass the link 'exp://172....', and it will navigate to the expo go.
+
+
+## NAVIGATION
+
+*Stack*
+<NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
+  <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Details" component={Details} />
+  </Stack.Navigator>
+</NavigationContainer>
+
+*Tab*
+<Tabs.Navigator>
+  <Tabs.Screen name="Home" component={Home} />
+  <Tabs.Screen name="Details" component={Details} />
+</Tabs.Navigator>
+
+*Drawer*
+<drawer.Navigator>
+  <drawer.Screen name="Home" component={Home} />
+  <drawer.Screen name="Details" component={Details} />
+</drawer.Navigator>

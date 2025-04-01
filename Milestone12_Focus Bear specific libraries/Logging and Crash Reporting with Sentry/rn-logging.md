@@ -12,3 +12,20 @@
 2. Using a file to log all the errors into. It helps to easily go through the errors at in place.
 3. Also, Sentry can be used to log errors and keep track of all the issues.
 
+## Sentry
+
+Sentry.captureMessage('Test message for Sentry!');
+
+const SentryError = () => {
+  return (
+    <View>
+      <Text>Simulating Sentry Error</Text>
+      <Button
+        title="Simulate Error"
+        onPress={() => {
+          throw new Error('Test error for Sentry!');
+        }}
+      />
+    </View>
+  );
+}

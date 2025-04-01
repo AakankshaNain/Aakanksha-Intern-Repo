@@ -13,3 +13,24 @@
 1. By testing manually, if the language is translating correctly. If the UI still supports font styling and formatting for all the different languages.
 2. Creating test files for automatically checking the translations.
 3. Using console logs to check if the translated language is correct.
+
+
+## i18next.js 
+
+const initializeI18n = async () => {
+  const userLanguage = await getUserLanguage(); 
+
+  i18n
+    .use(initReactI18next)
+    .init({
+      resources: {
+        en: { translation: en },
+        fr: { translation: fr },
+      },
+      lng: userLanguage, 
+      fallbackLng: 'en',
+      interpolation: { escapeValue: false },
+    });
+
+  console.log('i18n initialized with language:', i18n.language); 
+};

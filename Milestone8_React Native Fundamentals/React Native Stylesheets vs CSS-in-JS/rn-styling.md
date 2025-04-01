@@ -11,3 +11,44 @@
 2. Using, percentage-based dimensions instead of 'px'.
 3. Flexbox can also be used to create flexible layouts.
 
+## rneui/themed
+
+const theme = createTheme({
+  lightColors: {
+    primary: "blue",
+  },
+  darkColors: {
+    primary: "#bb86fc",
+  },
+  mode: "light",
+});
+
+export default function Theme() {
+  return (
+    <ThemeProvider theme={theme}>
+      <View>
+        <Text>Styled with RNEUI</Text>
+      </View>
+    </ThemeProvider>
+  );
+}
+
+## inline-style
+
+<Text style={{fontSize:24, fontWeight: "bold", marginBottom: 20}}>Counter: {count}</Text>
+
+## Stylesheet
+
+<View style={styles.buttonContainer}>
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f8f8f8",
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    gap: 10,
+  },
+});

@@ -12,3 +12,26 @@
 2. React dev tools can used to check if there are unnecessary re-renders.
 3. Also, using console logging can used.
 
+## CallBack
+
+// useCallback is used to memoize the function so that it does not re-create the function
+  // every time the parent component re-renders
+  const handleTextChange = useCallback(
+    (e) => {
+      setText(e.target.value)
+    },
+    [setText],
+  )
+
+## Memo
+
+// Memoizes the factorial function to prevent re-computation
+  const numFactorial = useMemo(() => factorial(num), [num])
+
+  const largeList = useMemo(() => {
+    const list = []
+    for (let i = 0; i < 500; i += 1) {
+      list.push(i)
+    }
+    return list
+  }, [])

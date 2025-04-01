@@ -13,3 +13,52 @@
 
 **Why is InteractionManager.runAfterInteractions necessary?**
 It provides smooth user experience by loading after heavy interactions like animations or gestures have been completed.
+
+
+## BASIC SWIPE
+
+const BasicSwipe = () => {
+  const translateX = useSharedValue(0);
+
+  const swipeGesture = Gesture.Pan()
+    .onUpdate((event) => {
+      translateX.value = event.translationX;
+    })
+    .onEnd(() => {
+      translateX.value = withSpring(0);
+    });
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ translateX: translateX.value }],
+  }));
+
+  return (
+    <View style={styles.container}>
+      <GestureDetector gesture={swipeGesture}>
+        <Animated.View style={[styles.box, animatedStyle]} />
+      </GestureDetector>
+    </View>
+  );
+};
+
+
+## LONG PRESS
+
+const LongPress = (event) => {
+  if (event.nativeEvent.state === State.ACTIVE) {
+    Alert.alert("Long Press Detected!");
+  }
+}
+
+
+const LongPressBox = () => {
+  return (
+    <GestureHandlerRootView>
+      <LongPressGestureHandler onHandlerStateChange={LongPress} minDurationMs={1000}>
+        <View>
+          <Button title="Press Me" onPress={() => Alert.alert("Button Pressed!")} />
+        </View>
+      </LongPressGestureHandler>
+    </GestureHandlerRootView>
+
+)};
