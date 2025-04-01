@@ -13,6 +13,7 @@ Automatically retrying failed API requests improves network reliability. This in
 
 ## Axios-retry
 
+```
 axiosRetry(AxiosInstanceNative, {
   retries: 3,
   retryDelay: (retryCount) => {
@@ -28,12 +29,15 @@ axiosRetry(AxiosInstanceNative, {
     );
   },
 });
+```
 
 ## Fetch
 
+```
 useEffect(() => {
   fetch("http://localhost:5000/tasks")
       .then(response => response.json())
       .then(data => console.log("API Response: ", data))
       .catch(error => console.error("API Error: ", error));
 }, []);
+```

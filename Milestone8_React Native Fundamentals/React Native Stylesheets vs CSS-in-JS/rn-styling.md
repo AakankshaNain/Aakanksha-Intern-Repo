@@ -13,6 +13,7 @@
 
 ## rneui/themed
 
+```
 const theme = createTheme({
   lightColors: {
     primary: "blue",
@@ -32,13 +33,17 @@ export default function Theme() {
     </ThemeProvider>
   );
 }
+```
 
 ## inline-style
 
+```
 <Text style={{fontSize:24, fontWeight: "bold", marginBottom: 20}}>Counter: {count}</Text>
+```
 
 ## Stylesheet
 
+```
 <View style={styles.buttonContainer}>
 const styles = StyleSheet.create({
   container: {
@@ -52,3 +57,4 @@ const styles = StyleSheet.create({
     gap: 10,
   },
 });
+```

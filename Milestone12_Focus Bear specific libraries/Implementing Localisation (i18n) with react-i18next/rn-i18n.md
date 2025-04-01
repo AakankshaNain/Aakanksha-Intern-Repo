@@ -17,6 +17,7 @@
 
 ## i18next.js 
 
+```
 const initializeI18n = async () => {
   const userLanguage = await getUserLanguage(); 
 
@@ -34,3 +35,4 @@ const initializeI18n = async () => {
 
   console.log('i18n initialized with language:', i18n.language); 
 };
+```

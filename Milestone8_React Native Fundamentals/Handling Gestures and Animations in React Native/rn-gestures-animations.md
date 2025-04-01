@@ -17,6 +17,7 @@ It provides smooth user experience by loading after heavy interactions like anim
 
 ## BASIC SWIPE
 
+```
 const BasicSwipe = () => {
   const translateX = useSharedValue(0);
 
@@ -40,10 +41,11 @@ const BasicSwipe = () => {
     </View>
   );
 };
-
+```
 
 ## LONG PRESS
 
+```
 const LongPress = (event) => {
   if (event.nativeEvent.state === State.ACTIVE) {
     Alert.alert("Long Press Detected!");
@@ -60,5 +62,5 @@ const LongPressBox = () => {
         </View>
       </LongPressGestureHandler>
     </GestureHandlerRootView>
-
 )};
+```

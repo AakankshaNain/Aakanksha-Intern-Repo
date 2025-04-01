@@ -16,21 +16,27 @@ These transitions can also be customized.
 ## NAVIGATION
 
 *Stack*
+```
 <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
   <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Details" component={Details} />
   </Stack.Navigator>
 </NavigationContainer>
+```
 
 *Tab*
+```
 <Tabs.Navigator>
   <Tabs.Screen name="Home" component={Home} />
   <Tabs.Screen name="Details" component={Details} />
 </Tabs.Navigator>
+```
 
 *Drawer*
+```
 <drawer.Navigator>
   <drawer.Screen name="Home" component={Home} />
   <drawer.Screen name="Details" component={Details} />
 </drawer.Navigator>
+```

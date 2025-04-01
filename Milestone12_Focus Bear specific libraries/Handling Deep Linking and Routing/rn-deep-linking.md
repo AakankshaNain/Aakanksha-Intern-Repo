@@ -17,6 +17,7 @@
 
 ## Deep Linking
 
+```
 const linking = {
   prefixes: ["myreactapp://"],
   config: {
@@ -26,3 +27,4 @@ const linking = {
     },
   },
 };
+```

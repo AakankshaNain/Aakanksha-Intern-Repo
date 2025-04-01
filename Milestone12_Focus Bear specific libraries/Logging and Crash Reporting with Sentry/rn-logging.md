@@ -14,6 +14,7 @@
 
 ## Sentry
 
+```
 Sentry.captureMessage('Test message for Sentry!');
 
 const SentryError = () => {
@@ -29,3 +30,4 @@ const SentryError = () => {
     </View>
   );
 }
+```
